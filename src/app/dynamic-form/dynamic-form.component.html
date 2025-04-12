@@ -41,8 +41,20 @@
   <div *ngIf="responseBodyData">
     <h3 class="text-lg font-bold mb-2">Extracted Data:</h3>
     <ul class="space-y-1">
-      <li *ngFor="let item of responseBodyData | keyvalue">
-        <strong>{{ item.key }}:</strong> {{ responseBodyData[item.key] }}
+      <li
+        *ngFor="let item of responseBodyData | keyvalue"
+        class="flex justify-around"
+      >
+        <strong class="w-[15rem]">{{ item.key }}:</strong>
+        <!-- {{ responseBodyData[item.key] }} -->
+        <input type="text" class="border m-2" />
+
+        <select class="border m-2">
+          <option value="">Select type</option>
+          <option value="Static">Static</option>
+          <option value="Dynamic">Dynamic</option>
+          <option value="Random">Ranodm</option>
+        </select>
       </li>
     </ul>
   </div>
